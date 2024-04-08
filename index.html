@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="es-ES" class="h-100" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Meteodaw</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" \
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" \ crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta name="theme-color" content="#712cf9">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+</head>
+
+<body class="text-bg-dark bg-dark">
+    <div class="main-container container-fluid p-3 d-flex flex-column justify-content-between">
+        <header class="mb-2 d-flex flex-row align-items-center justify-content-between w-100 px-5">
+            <div class="page-logo d-flex flex-row align-items-center justify-content-between">
+                <i class="page-icon bi bi-rainbow"></i>
+                <h3 class="float-md-start mb-0">_METEODAW</h3>
+            </div>
+            <form class="d-flex" role="search">
+                <input id="searchLocation" class="search-input form-control me-2 bg-dark bg-gradient" type="search" placeholder="Search"
+                    aria-label="Search" list="suggestions" autocomplete="off">
+                <datalist id="suggestions">
+                </datalist>
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+                <button class="btn btn-outline-secondary mx-2" type="button">
+                    <i class="geoloc-icon bi bi-crosshair"></i>
+                </button>
+            </form>
+            
+            <button type="button" class="boton-login btn btn-info"><i class="bi bi-person"></i></button>
+        </header>
+        <!-- WEATHER INFO CARDS -->
+        <main class="h-100">
+            <div class="row h-100 mt-3">
+                <!-- LEFT SIDE CARDS -->
+                <div class="col-12 col-md-3 d-flex flex-column row-gap-3 justify-content-start align-items-start">
+                    <!-- Card Ara-->
+                    <div class="card-ara card bg-dark bg-gradient">
+                        <div class="card-body d-flex flex-column">
+                            <span class="card-text-ara card-text">Ara</span>
+                            <div class="d-flex flex-row justify-content-evenly align-items-center">
+                                <span class="card-text-temp card-text">17 ºC</span>
+                                <img src="./assets/images/weather_icons/02d.png" class="card-img card-img-top"
+                                    alt="...">
+                            </div>
+                            <span class="card-text-resum card-text">Assoleiat</span>
+                            <hr>
+                            <div d-flex flex-row justify-content-evenly align-items-center>
+                                <i class="card-icon bi bi-calendar"></i>
+                                <span class="card-text-data card-text">27 de maig</span>
+                            </div>
+                            <div d-flex flex-row justify-content-evenly align-items-center>
+                                <i class="bi bi-geo-alt card-icon"></i>
+                                <span class="card-text-lloc card-text">Badalona</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Previsió 5 dies-->
+                    <div class="card-previsio-5dies card bg-dark bg-gradient">
+                        <div class="card-body d-flex flex-column gap-3">
+                            <div class="d-flex flex-row justify-content-evenly align-items-center">
+                                <img src="./assets/images/weather_icons/02d.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">19 ºC</span>
+                                <span class="card-text-data card-text">27 de maig</span>
+                                <span class="card-text-dia card-text">Dimecres</span>
+                            </div>
+                            <div class="d-flex flex-row justify-content-evenly align-items-center">
+                                <img src="./assets/images/weather_icons/02d.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">18 ºC</span>
+                                <span class="card-text-data card-text">28 de maig</span>
+                                <span class="card-text-dia card-text">Dijous</span>
+                            </div>
+                            <div class="d-flex flex-row justify-content-evenly align-items-center">
+                                <img src="./assets/images/weather_icons/09d.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">17 ºC</span>
+                                <span class="card-text-data card-text">29 de maig</span>
+                                <span class="card-text-dia card-text">Divendres</span>
+                            </div>
+                            <div class="d-flex flex-row justify-content-evenly align-items-center">
+                                <img src="./assets/images/weather_icons/10d.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">16 ºC</span>
+                                <span class="card-text-data card-text">30 de maig</span>
+                                <span class="card-text-dia card-text">Dissabte</span>
+                            </div>
+                            <div class="d-flex flex-row justify-content-evenly align-items-center">
+                                <img src="./assets/images/weather_icons/01d.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">20 ºC</span>
+                                <span class="card-text-data card-text">31 de maig</span>
+                                <span class="card-text-dia card-text">Diumenge</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- RIGHT SIDE CARDS -->
+                <div class="col-12 col-md-9 d-flex flex-column justify-content-start align-items-center gap-4">
+                    <!-- BRIEFING CARDS -->
+                    <div
+                        class="card-briefing container-fluid d-flex flex-row gap-2 flex-wrap justify-content-between w-100">
+                        <!-- Card: Qualitat de l'aire -->
+                        <div class="card-qualitat-aire card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3">
+                                <div class="d-flex flex-row justify-content-between align-items-center">
+                                    <span class="card-text-titol card-text">Qualitat de l'aire</span>
+                                    <span class="badge rounded-pill text-bg-warning">Pobra</span>
+                                </div>
+                                <div class="d-flex flex-row justify-content-around align-items-center">
+                                    <i class="card-icon bi bi-clipboard-data"></i>
+                                    <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                        <span class="card-text-variable card-text">PM25</span>
+                                        <span class="card-text-mesura card-text">160</span>
+                                    </div>
+                                    <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                        <span class="card-text-variable card-text">SO2</span>
+                                        <span class="card-text-mesura card-text">26.2</span>
+                                    </div>
+                                    <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                        <span class="card-text-variable card-text">NO2</span>
+                                        <span class="card-text-mesura card-text">51.0</span>
+                                    </div>
+                                    <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                        <span class="card-text-variable card-text">O3</span>
+                                        <span class="card-text-mesura card-text">0.130</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Sortida i posta de sol -->
+                        <div class="card-sol card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3">
+                                <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <span class="card-text-titol card-text">Sortida i posta de sol</span>
+                                </div>
+                                <div class="d-flex flex-row justify-content-around align-items-center">
+                                    <i class="card-icon bi bi-brightness-high"></i>
+                                    <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                        <span class="card-text-variable card-text">Sortida</span>
+                                        <span class="card-text-mesura card-text">06:41</span>
+                                    </div>
+                                    <i class="card-icon bi bi-moon"></i>
+                                    <div class="d-flex flex-column gap-3 justify-content-between align-items-center">
+                                        <span class="card-text-variable card-text">Posta</span>
+                                        <span class="card-text-mesura card-text">19:11</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Humitat -->
+                        <div class="card-humitat card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3">
+                                <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <span class="card-text-titol card-text">Humitat</span>
+                                </div>
+                                <div class="d-flex flex-row justify-content-around align-items-center">
+                                    <i class="card-icon bi bi-moisture"></i>
+                                    <span class="card-text-mesura card-text">48 %</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Pressió -->
+                        <div class="card-pressio card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3">
+                                <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <span class="card-text-titol card-text">Pressió atmosfèrica</span>
+                                </div>
+                                <div class="d-flex flex-row justify-content-around align-items-center">
+                                    <i class="card-icon bi bi-hurricane"></i>
+                                    <span class="card-text-mesura card-text">1007 hPa</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Visibilitat -->
+                        <div class="card-visibilitat card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3">
+                                <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <span class="card-text-titol card-text">Precipitació</span>
+                                </div>
+                                <div class="d-flex flex-row justify-content-around align-items-center">
+                                    <i class="card-icon bi bi-cloud-drizzle"></i>
+                                    <span class="card-text-mesura card-text">10 %</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Sensació tèrmica -->
+                        <div class="card-sensacio card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3">
+                                <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <span class="card-text-titol card-text">Vent</span>
+                                </div>
+                                <div class="d-flex flex-row justify-content-around align-items-center">
+                                    <i class="card-icon bi bi-wind"></i>
+                                    <span class="card-text-mesura card-text">S 25 km/h</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PREVISIÓ HORÀRIA -->
+                    <div
+                        class="card-previsio-horaria container-fluid d-flex flex-row gap-1 flex-wrap justify-content-between w-100">
+                        <!-- Controls cards/gràfica -->
+                        <i class="icon-grafica bi bi-graph-up"></i>
+                        <div class="control-grafica form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Gràfica</label> -->
+                        </div>
+                        <!-- Previsió per hores -->
+                        <div class="card-previsio-per-hores card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-evenly">
+                                <span class="card-text-hora card-text">2 AM</span>
+                                <img src="./assets/images/weather_icons/01n.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">11 ºC</span>
+                                <img src="./assets/images/weather_icons/direction.png" class="card-img img-vent card-img-top"
+                                    alt="...">
+                            </div>
+                        </div>
+                        <div class="card-previsio-per-hores card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-evenly">
+                                <span class="card-text-hora card-text">5 AM</span>
+                                <img src="./assets/images/weather_icons/02n.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">9 ºC</span>
+                                <img src="./assets/images/weather_icons/direction.png" class="card-img img-vent card-img-top"
+                                    alt="...">
+                            </div>
+                        </div>
+                        <div class="card-previsio-per-hores card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-evenly">
+                                <span class="card-text-hora card-text">8 AM</span>
+                                <img src="./assets/images/weather_icons/02d.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">11 ºC</span>
+                                <img src="./assets/images/weather_icons/direction.png" class="card-img img-vent card-img-top"
+                                    alt="...">
+                            </div>
+                        </div>
+                        <div class="card-previsio-per-hores card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-evenly">
+                                <span class="card-text-hora card-text">11 AM</span>
+                                <img src="./assets/images/weather_icons/02d.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">14 ºC</span>
+                                <img src="./assets/images/weather_icons/direction.png" class="card-img img-vent card-img-top"
+                                    alt="...">
+                            </div>
+                        </div>
+                        <div class="card-previsio-per-hores card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-evenly">
+                                <span class="card-text-hora card-text">2 PM</span>
+                                <img src="./assets/images/weather_icons/01d.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">17 ºC</span>
+                                <img src="./assets/images/weather_icons/direction.png" class="card-img img-vent card-img-top"
+                                    alt="...">
+                            </div>
+                        </div>
+                        <div class="card-previsio-per-hores card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-evenly">
+                                <span class="card-text-hora card-text">5 PM</span>
+                                <img src="./assets/images/weather_icons/01d.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">16 ºC</span>
+                                <img src="./assets/images/weather_icons/direction.png" class="card-img img-vent card-img-top"
+                                    alt="...">
+                            </div>
+                        </div>
+                        <div class="card-previsio-per-hores card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-evenly">
+                                <span class="card-text-hora card-text">8 PM</span>
+                                <img src="./assets/images/weather_icons/01n.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">14 ºC</span>
+                                <img src="./assets/images/weather_icons/direction.png" class="card-img img-vent card-img-top"
+                                    alt="...">
+                            </div>
+                        </div>
+                        <div class="card-previsio-per-hores card bg-dark bg-gradient">
+                            <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-evenly">
+                                <span class="card-text-hora card-text">11 PM</span>
+                                <img src="./assets/images/weather_icons/01n.png" class="card-img card-img-top"
+                                    alt="...">
+                                <span class="card-text-temp card-text">13 ºC</span>
+                                <img src="./assets/images/weather_icons/direction.png" class="card-img img-vent card-img-top"
+                                    alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="w-100 mt-3 text-white-50 d-flex flex-columns justify-content-around">
+            <span>ETP XAVIER CFGS DAW M6-M7 2023/2024</span>
+            <span>Dades ofertes per <a target="_blank" href="https://open-meteo.com/">Open-Meteo.com</a></span>
+        </footer>
+    </div>
+
+    <!-- Color mode controls -->
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path
+                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+            <path
+                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+            aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+            <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+                <use href="#circle-half"></use>
+            </svg>
+            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+                    aria-pressed="false">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                        <use href="#sun-fill"></use>
+                    </svg>
+                    Light
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+                    aria-pressed="false">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                        <use href="#moon-stars-fill"></use>
+                    </svg>
+                    Dark
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+                    aria-pressed="true">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                        <use href="#circle-half"></use>
+                    </svg>
+                    Auto
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </div> -->
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" \
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" \
+    crossorigin="anonymous"></script>
+<!-- <script src="./assets/js/color-modes.js"></script> -->
+<script src="./script.js" type="module"></script>
+
+</html>
