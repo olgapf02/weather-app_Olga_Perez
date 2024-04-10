@@ -1,0 +1,3 @@
+-Atualizar dashboard a partir de búsquedas con sugerencias
+-Atualizar dashboard a partir de geolocalización del navegador
+-Añadir modal de login

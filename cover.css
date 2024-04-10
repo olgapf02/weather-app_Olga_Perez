@@ -181,7 +181,7 @@ body {
   font-size: 20px;
 }
 
-.card-ara .card-text-temp {
+.card-ara .card-text-temp-current {
   color: whitesmoke;
   font-size: 46px;
 }
@@ -194,7 +194,7 @@ body {
   color: whitesmoke;
 }
 
-.card-ara .card-text-resum {
+.card-ara .card-text-description-current {
   color: whitesmoke;
   font-size: 18px;
 }
@@ -204,12 +204,12 @@ body {
   margin-right: 10px;
 }
 
-.card-ara .card-text-data {
+.card-ara .card-text-data-current {
   color: lightgray;
   font-size: 16px;
 }
 
-.card-ara .card-text-lloc {
+.card-ara .card-text-lloc-current {
   color: lightgray;
   font-size: 16px;
 }
@@ -218,14 +218,14 @@ body {
   width: 10%;
 }
 
-.card-previsio-5dies .card-text-temp {
+.card-previsio-5dies .card-text-temp-current {
   color: whitesmoke;
   font-size: 20px;
-  width: 20%;
+  width: 25%;
   text-align: right;
 }
 
-.card-previsio-5dies .card-text-data {
+.card-previsio-5dies .card-text-data-current {
   color: lightgrey;
   font-size: 14px;
   width: 35%;
@@ -242,6 +242,7 @@ body {
 /* CARDS BRIEFING */
 .card-qualitat-aire {
   width: 95%;
+  opacity: 50%;
 }
 
 .card-sol {
@@ -260,7 +261,7 @@ body {
   width: 95%;
 }
 
-.card-sensacio {
+.card-vent {
   width: 95%;
 }
 
@@ -285,7 +286,7 @@ body {
     width: 22%
   }
 
-  .card-sensacio {
+  .card-vent {
     width: 22%
   }
 }
@@ -339,7 +340,7 @@ body {
 .card-humitat .card-icon,
 .card-pressio .card-icon,
 .card-visibilitat .card-icon,
-.card-sensacio .card-icon {
+.card-vent .card-icon {
   color: whitesmoke;
   font-size: 40px;
 }
@@ -347,7 +348,7 @@ body {
 .card-humitat .card-text-titol,
 .card-pressio .card-text-titol,
 .card-visibilitat .card-text-titol,
-.card-sensacio .card-text-titol {
+.card-vent .card-text-titol {
   color: lightgrey;
   font-size: 16px;
   text-align: left;
@@ -356,7 +357,7 @@ body {
 .card-humitat .card-text-variable,
 .card-pressio .card-text-variable,
 .card-visibilitat .card-text-variable,
-.card-sensacio .card-text-variable {
+.card-vent .card-text-variable {
   color: lightgrey;
   font-size: 14px;
   text-align: left;
@@ -365,7 +366,7 @@ body {
 .card-humitat .card-text-mesura,
 .card-pressio .card-text-mesura,
 .card-visibilitat .card-text-mesura,
-.card-sensacio .card-text-mesura {
+.card-vent .card-text-mesura {
   color: lightgrey;
   font-size: 24px;
   text-align: left;
@@ -395,7 +396,7 @@ body {
   width: 50%;
 }
 
-.card-previsio-per-hores:nth-child(2) .img-vent {
+/* .card-previsio-per-hores:nth-child(2) .img-vent {
   transform: rotate(45deg);
 }
 
@@ -405,7 +406,7 @@ body {
 
 .card-previsio-per-hores:nth-child(7) .img-vent {
   transform: rotate(135deg);
-}
+} */
 
 .card-previsio-per-hores .card-text-hora {
   color: lightgrey;
@@ -413,7 +414,7 @@ body {
   text-align: left;
 }
 
-.card-previsio-per-hores .card-text-temp {
+.card-previsio-per-hores .card-text-temp-current {
   color: lightgrey;
   font-size: 16px;
   text-align: left;

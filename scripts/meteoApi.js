@@ -1,9 +1,7 @@
 function fetchMeteo(location) {
-    fetch(buildURL())
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch((error) => console.log(error)
-        )
+    // TODO: include XMR version as polyfill
+    let apiData = fetch(buildURL(location.lat,location.lon))
+    return apiData
 }
 
 function fetchMeteoXHR(location) {
@@ -18,18 +16,37 @@ function fetchMeteoXHR(location) {
     xhttp.send();
 }
 
-function buildURL() {
-    // const url = 'https://api.open-meteo.com/v1/forecast?' + new URLSearchParams({
-    //     // Default location: Barcelona, Spain
-    //     "latitude": 41.390205,
-    //     "longitude": 2.154007,
-    //     "hourly": "temperature_2m,relative_humidity_2m,is_day,precipitation,surface_pressure,wind_speed_10m,wind_direction_10m",
-    //     "daily": "sunrise,sunset,precipitation_probability_max"
-    // })
-
+function buildURL(lat,lon) {
     // URL para trabajr todos con ella
-    const url = 'https://api.open-meteo.com/v1/forecast?latitude=41.3888&longitude=2.159&current=temperature_2m,relative_humidity_2m,weather_code,surface_pressure,wind_speed_10m,wind_direction_10m&hourly=temperature_2m,weather_code,wind_direction_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset'
-    // const url = `https://api.open-meteo.com/v1/forecast?latitude=41.390205&longitude=2.154007&daily=sunrise,sunset,precipitation_probability_max`
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,is_day,precipitation,weather_code,surface_pressure,wind_speed_10m,wind_direction_10m&hourly=temperature_2m,weather_code,wind_direction_10m,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset`
+
+    // let params = new URLSearchParams()
+    // params.append("latitude", lat)
+    // params.append("longitude", lon)
+    // params.append("current",[
+    //     "temperature_2m",
+    //     "relative_humidity_2m",
+    //     "is_day,precipitation",
+    //     "weather_code",
+    //     "surface_pressure",
+    //     "wind_speed_10m",
+    //     "wind_direction_10"].join(','))
+    // params.append("hourly", [
+    //     "temperature_2m",
+    //     "weather_code",
+    //     "wind_direction_10m",
+    //     "is_day"])
+    // params.append("daily", [
+    //     "weather_code",
+    //     "temperature_2m_max",
+    //     "temperature_2m_min",
+    //     "sunrise",
+    //     "sunset"].join(','))
+
+    // let url = 'https://api.open-meteo.com/v1/forecast?' + params
+    // console.log(url)
+    // url = url.replace(",","%2C")
+    // console.log(url)
     return url
 }
 

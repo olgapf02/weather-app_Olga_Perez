@@ -10,19 +10,24 @@ function fetchLocation(location) {
         .catch((error) => console.log(error))
 }
 
-function updateSuggestions(data){
+function updateSuggestions(data) {
     let datalist = document.querySelector("#suggestions")
     datalist.innerHTML = ""
-    data.forEach((item,index)=>{
+    data.forEach((item, index) => {
         let option = document.createElement('option')
-        if(item["admin1"] != "" & item["admin1"] != undefined){
-            option.value=`${item["name"]}, ${item["admin1"]}, ${item["country"]}`
+        if (item["admin1"] != "" & item["admin1"] != undefined) {
+            option.value = `${item["name"]}, ${item["admin1"]}, ${item["country"]}`
         }
-        else{
-            option.value=`${item["name"]}, ${item["country"]}`
+        else {
+            option.value = `${item["name"]}, ${item["country"]}`
         }
         datalist.appendChild(option)
     })
 }
 
-export {fetchLocation}
+const defaultLocation = {
+    "lat": 41.3888,
+    "lon": 2.159
+}
+
+export { fetchLocation, defaultLocation }
