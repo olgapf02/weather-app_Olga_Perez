@@ -2,9 +2,9 @@ FET: -Atualizar dashboard a partir de búsquedas con sugerencias
 FET: -Atualizar dashboard a partir de geolocalización del navegador
 FET: -Añadir modal de login
 FET: -Autenticación de usuarios
+FET: -Daily forecast (repetido)
 
 PER FERs:
-->Daily forecast (repetido)
 ->Poder guardar localizaciones favoritas
 ---- Actualizar bbdd
 ---- Nueva ruta de backend /favoritos
