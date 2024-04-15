@@ -40,7 +40,7 @@ function updateVariable(variableSet, variable, value, units) {
                 element.innerHTML = value[index].slice(11, 16)
             }
             else if(variable == "temperature_2m_max" || variable == "temperature_2m_min"){
-                element.innerHTML = Math.round(parseInt(value)) + " " + units
+                element.innerHTML = Math.round(parseInt(value[index])) + " " + units
             }
             else if (variable == "time") {
                 element.innerHTML = value[index].slice(8, 10) + "/" + value[index].slice(5, 7)
