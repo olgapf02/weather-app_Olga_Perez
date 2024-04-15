@@ -1,3 +1,16 @@
--Atualizar dashboard a partir de búsquedas con sugerencias
--Atualizar dashboard a partir de geolocalización del navegador
--Añadir modal de login
+FET: -Atualizar dashboard a partir de búsquedas con sugerencias
+FET: -Atualizar dashboard a partir de geolocalización del navegador
+FET: -Añadir modal de login
+FET: -Autenticación de usuarios
+
+PER FERs:
+->Daily forecast (repetido)
+->Poder guardar localizaciones favoritas
+---- Actualizar bbdd
+---- Nueva ruta de backend /favoritos
+---- datos en formato JSON
+->Que cada usuario tenga su localización por defecto (primera de las favoritas?)
+---- Nueva ruta o no?
+->Logging actividad aplicación: timestamp,script ejecutado,método(payload si hay post),ip_cliente,sesión(usuario)
+---- usar superglobals
+->Tener en cuenta zonas horarias (FIX)

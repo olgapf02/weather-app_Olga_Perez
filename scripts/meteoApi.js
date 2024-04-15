@@ -1,7 +1,7 @@
 function fetchMeteo(location) {
     // TODO: include XMR version as polyfill
     let apiData = fetch(buildURL(location.lat,location.lon))
-    return apiData
+    return apiData  
 }
 
 function fetchMeteoXHR(location) {

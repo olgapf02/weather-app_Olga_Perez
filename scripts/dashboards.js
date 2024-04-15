@@ -1,7 +1,18 @@
 import { variables, imageVariables } from "./maps.js"
 
+function setUserDashboard(){
 
-function updateDashboard(data) {
+}
+
+function unsetUserDashboard(){
+    
+}
+
+
+function updateDashboard(data,location) {
+    //Update location
+    document.querySelector(".ph-current-location").innerHTML = location.name
+
     // Update meteo variables
     for (let [variableSet, values] of Object.entries(variables)) {
         for (let variable of values) {
@@ -21,30 +32,34 @@ function updateDashboard(data) {
 function updateVariable(variableSet, variable, value, units) {
     const targetClass = `.ph-${variableSet}-${variable}`
     let elements = document.querySelectorAll(targetClass)
-    console.log(elements)
-    if (value.length > 1) {     // FIX: hace que los value tipo string siempre pasen esta condición (current-time)
+    // console.log(targetClass)
+    
+    if (variableSet != "current") { 
         for (let [index, element] of Array.from(elements).entries()) {
             if (variable == "sunrise" || variable == "sunset") {
                 element.innerHTML = value[index].slice(11, 16)
+            }
+            else if(variable == "temperature_2m_max" || variable == "temperature_2m_min"){
+                element.innerHTML = Math.round(parseInt(value)) + " " + units
             }
             else if (variable == "time") {
                 element.innerHTML = value[index].slice(8, 10) + "/" + value[index].slice(5, 7)
             }
             else if (variableSet == "hourly") {
-                element.innerHTML = value[index * 3 + 2] + "" + units
+                element.innerHTML = Math.round(parseInt(value[index * 3 + 2])) + " " + units
             }
             else {
-                element.innerHTML = value[index] + "" + units
+                element.innerHTML = Math.round(parseInt(value[index])) + " " + units
             }
         }
     }
     else {
         let element = Array.from(elements)[0]
         if (variable == "time") {
-            element.innerHTML = value[index].slice(8, 10) + "/" + value[index].slice(5, 7)
+            element.innerHTML = value.slice(8, 10) + "/" + value.slice(5, 7)
         }
         else{
-            element.innerHTML = value + "" + units
+            element.innerHTML = Math.round(parseInt(value)) + " " + units
         }
         
     }
@@ -55,7 +70,7 @@ function updateWMO(variableSet, variable, value, isDay) {
     let elements = document.querySelectorAll(targetClass)
 
     if (variable == "weather_code") {
-        if (value.length > 1) {
+        if (variableSet != "current") {
             for (let [index, element] of Array.from(elements).entries()) {
                 if (variableSet == "hourly") {
                     if (isDay[index * 3 + 2]) {
@@ -82,7 +97,7 @@ function updateWindDirection(variableSet, variable, value) {
     let elements = document.querySelectorAll(targetClass)
 
     if (variable == "wind_direction_10m") {
-        if (value.length > 1) {
+        if (variableSet != "current") {
             for (let [index, element] of Array.from(elements).entries()) {
                 if (variableSet == "hourly") {
                     element.style = `transform:rotate(${value[index * 3 + 2]}deg);`
@@ -94,4 +109,21 @@ function updateWindDirection(variableSet, variable, value) {
     }
 }
 
-export { updateDashboard }
+function updateSuggestions(data) {
+    let datalist = document.querySelector("#suggestions")
+    datalist.innerHTML = ""
+    data.forEach((item, index) => {
+        let option = document.createElement('option')
+        option.setAttribute("lat",item["latitude"])
+        option.setAttribute("lon",item["longitude"])
+        if (item["admin1"] != "" & item["admin1"] != undefined) {
+            option.value = `${item["name"]}, ${item["admin1"]}, ${item["country"]}`
+        }
+        else {
+            option.value = `${item["name"]}, ${item["country"]}`
+        }
+        datalist.appendChild(option)
+    })
+}
+
+export { updateDashboard, setUserDashboard, unsetUserDashboard, updateSuggestions }

@@ -1,33 +1,27 @@
 function fetchLocation(location) {
-    fetch('https://geocoding-api.open-meteo.com/v1/search?' + new URLSearchParams({
+    let apiData = fetch('https://geocoding-api.open-meteo.com/v1/search?' + new URLSearchParams({
         "name": location,
         "count": 10,
         "language": "en",
         "format": "json"
     }))
-        .then(response => response.json())
-        .then(data => updateSuggestions(data["results"]))
-        .catch((error) => console.log(error))
+    return apiData
 }
 
-function updateSuggestions(data) {
-    let datalist = document.querySelector("#suggestions")
-    datalist.innerHTML = ""
-    data.forEach((item, index) => {
-        let option = document.createElement('option')
-        if (item["admin1"] != "" & item["admin1"] != undefined) {
-            option.value = `${item["name"]}, ${item["admin1"]}, ${item["country"]}`
-        }
-        else {
-            option.value = `${item["name"]}, ${item["country"]}`
-        }
-        datalist.appendChild(option)
-    })
+function reverseGeocoding(lat,lon){
+    let apiData = fetch('http://api.openweathermap.org/geo/1.0/reverse?' + new URLSearchParams({
+        "lat": lat,
+        "lon": lon,
+        "limit": 1,
+        "appid": "1159a738a336bcc37eca65bc1acc4f11"
+    }))
+    return apiData
 }
 
 const defaultLocation = {
     "lat": 41.3888,
-    "lon": 2.159
+    "lon": 2.159,
+    "name": "Barcelona, Catalonia, Spain"
 }
 
-export { fetchLocation, defaultLocation }
+export { fetchLocation, defaultLocation, reverseGeocoding }
