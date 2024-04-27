@@ -1,13 +1,13 @@
 import { variables, imageVariables } from "./maps.js"
+import { checkLogin } from "./login.js"
 
-function setUserDashboard(){
-
+async function setUserDashboard(){
+    checkLogin()
 }
 
 function unsetUserDashboard(){
     
 }
-
 
 function updateDashboard(data,location) {
     //Update location
@@ -26,6 +26,13 @@ function updateDashboard(data,location) {
             updateWMO(imageVariableSet, variable, data[imageVariableSet][variable], data[imageVariableSet]["is_day"])
             updateWindDirection(imageVariableSet, variable, data[imageVariableSet][variable])
         }
+    }
+    // Update favorite icon
+    if(location.isFavorite){
+        document.querySelector('.add-favorite-button').classList.add("is-favorite")
+    }
+    else{
+        document.querySelector('.add-favorite-button').classList.remove("is-favorite")
     }
 }
 

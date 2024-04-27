@@ -21,7 +21,8 @@ function reverseGeocoding(lat,lon){
 const defaultLocation = {
     "lat": 41.3888,
     "lon": 2.159,
-    "name": "Barcelona, Catalonia, Spain"
+    "name": "Barcelona, Catalonia, Spain",
+    "isFavorite": true
 }
 
 export { fetchLocation, defaultLocation, reverseGeocoding }

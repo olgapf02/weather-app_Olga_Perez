@@ -42,15 +42,19 @@
                 </button>
             </div>
             <div class="d-flex flex-row gap-3 align-items-center">
+                <button class="upload-photo-button btn btn-outline-secondary mx-2" type="button" data-bs-toggle="modal"
+                    data-bs-target="#uploadPhotoModal">
+                    <i class="bi bi-camera"></i>
+                </button>
+
                 <div class="dropdown user-menu">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false" disabled>
-
                     </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">El Cairo</a></li>
+                    <ul class="favorites-list dropdown-menu">
+                        <!-- <li><a class="dropdown-item" href="#">El Cairo</a></li>
                         <li><a class="dropdown-item" href="#">Karnak</a></li>
-                        <li><a class="dropdown-item" href="#">Giza</a></li>
+                        <li><a class="dropdown-item" href="#">Giza</a></li> -->
                     </ul>
                 </div>
 
@@ -87,9 +91,9 @@
                             <div class="d-flex flex-row justify-content-start align-items-center">
                                 <i class="bi bi-geo-alt card-icon"></i>
                                 <span class="ph-current-location card-text-lloc-current card-text w-75">--</span>
-                                <button class="btn btn-outline-secondary mx-2" type="button">
+                                <button class="add-favorite-button btn btn-outline-secondary mx-2" type="button">
                                     <i class="geoloc-icon bi bi-heart"></i>
-                                 </button>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -360,8 +364,66 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        (...)
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UPLOAD PHOTO MODAL -->
+        <div class="modal fade" id="uploadPhotoModal" tabindex="-1" aria-labelledby="uploadPhotoLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="uploadPhotoLabel">Upload photo</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="photoLocation" class="form-label">Location</label>
+                                <input type="text" class="form-control" id="photoLocation" name="photoLocation"
+                                    readonly>
+                            </div>
+                            <!-- Image input -->
+                            <div class="mb-3">
+                                <label for="photoFile" class="form-label">Select photo to upload</label>
+                                <input class="form-control" type="file" id="photoFile" name="photoFile">
+                            </div>
+                            <button type="button" class="button-upload-photo btn btn-primary"
+                                name="login">Upload</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OFFCANVAS  PHOTO DISPLAY-->
+        <div class="offcanvas offcanvas-bottom bg-dark h-75" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel" data-bs-backdrop="false">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div id="carouselExample" class="carousel slide w-50 m-auto">
+                    <div class="carousel-inner">
+                        <!-- <div class="carousel-item active">
+                            <img src="..." class="d-block w-100" alt="...">
+                        </div> -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </div>

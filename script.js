@@ -1,7 +1,8 @@
 import { fetchLocation, defaultLocation, reverseGeocoding } from "./scripts/locations.js"
 import { fetchMeteo } from "./scripts/meteoApi.js"
-import { updateDashboard, updateSuggestions } from "./scripts/dashboards.js"
+import { updateDashboard, updateSuggestions, setUserDashboard } from "./scripts/dashboards.js"
 import { requestLogin, requestLogout, checkLogin, loggedIn } from "./scripts/login.js"
+import { addFavorite, requestUploadPhoto, refreshPhotos } from "./scripts/favorites.js"
 
 let targetLocation = null
 
@@ -12,12 +13,39 @@ window.onload = () => {
     document.querySelector('.button-login').addEventListener('click', requestLogin)
     document.querySelector('.boton-logout').addEventListener('click', requestLogout)
     document.querySelector('.current-location-button').addEventListener('click', getCurrentLocation)
-
+    document.querySelector('.add-favorite-button').addEventListener('click', addFavoriteButton)
+    document.querySelector('#uploadPhotoModal').addEventListener('show.bs.modal',uploadPhotoModalShow)
+    document.querySelector('.button-upload-photo').addEventListener('click', requestUploadPhoto)
+    document.querySelector('body').addEventListener('contextmenu', showOffcanvas)
 
     //Load default data
-    checkLogin()
+    let result = setUserDashboard()
+
     targetLocation = defaultLocation
     setInterval(refreshDashboard(targetLocation), 5000)
+}
+
+function showOffcanvas(event){
+    event.preventDefault() 
+
+    refreshPhotos(targetLocation)
+
+    let offCanvas = new bootstrap.Offcanvas(document.querySelector('#offcanvasExample'))
+    offCanvas.toggle()
+
+}
+
+function uploadPhotoModalShow(){
+    document.querySelector('#photoLocation').value = targetLocation.name
+}
+
+function addFavoriteButton() {
+    let favorite = {
+        "name": targetLocation.name,
+        "lat": targetLocation.lat,
+        "lon": targetLocation.lon
+    }
+    addFavorite(favorite)
 }
 
 function searchLocation() {
@@ -51,6 +79,7 @@ function getCurrentLocation() {
                 refreshDashboard(targetLocation)
             })
         newLocation.name = ""
+        newLocation.isFavorite = false
         targetLocation = newLocation
         refreshDashboard(targetLocation)
     })
@@ -74,7 +103,11 @@ function refreshSuggestions(e) {
 function refreshDashboard(location) {
     fetchMeteo(location)
         .then(response => response.json())
-        .then(((data) => updateDashboard(data, location)))
+        .then(((data) => {
+            // console.log(data)
+            updateDashboard(data, location)
+        }))
         .catch((error) => console.log(error)
         )
 }
+

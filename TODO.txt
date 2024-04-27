@@ -14,3 +14,8 @@ PER FERs:
 ->Logging actividad aplicación: timestamp,script ejecutado,método(payload si hay post),ip_cliente,sesión(usuario)
 ---- usar superglobals
 ->Tener en cuenta zonas horarias (FIX)
+
+->Nueva funcionalidad: fotos de usuarios
+---- FRONT: Form Data: data.append('file', input.files[0])
+---- BACK: move_uploaded_file( $_FILES['userFile']['tmp_name'], 'images/'.$newname);
+---- FRONT: mostrar imágenes de algún modo

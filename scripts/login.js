@@ -1,3 +1,5 @@
+import { getFavorites } from "./favorites.js";
+
 let loggedIn = false
 
 function checkLogin() {
@@ -21,12 +23,22 @@ function checkLogin() {
                 document.querySelector(".boton-login").style = "background-color:orange ;"
                 document.querySelector(".user-menu button").disabled = false
                 document.querySelector(".user-menu button").innerHTML = data
+                document.querySelector('.upload-photo-button').style.display = "block"
+                return true
             }
             else {
                 loggedIn = false
                 document.querySelector(".boton-login").style = "background-color:lightblue ;"
                 document.querySelector(".user-menu button").disabled = true
                 document.querySelector(".user-menu button").innerHTML = ""
+                document.querySelector('.upload-photo-button').style.display = "none"
+                return false
+            }
+        })
+        .then((result) => {
+            if (result) {
+                getFavorites()
+                // getPhotos()
             }
         })
         .catch((error) => { console.log(error) })
@@ -41,7 +53,7 @@ function requestLogin(event) {
     formData.append('user', user);
     formData.append('password', password);
     formData.append('login', true);
-    console.log(user, ",", password)
+    // console.log(user, ",", password)
     const options = {
         method: 'POST',
         body: formData
@@ -53,11 +65,11 @@ function requestLogin(event) {
         })
         .then((data) => {
             console.log(data)
-            if(data == "1"){
+            if (data == "1") {
                 checkLogin()
             }
             $('#loginModal').modal('hide')
-            
+
         })
         .catch((error) => { console.log(error) })
 }

@@ -19,7 +19,7 @@ function fetchMeteoXHR(location) {
 function buildURL(lat,lon) {
     // URL para trabajr todos con ella
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,is_day,precipitation,weather_code,surface_pressure,wind_speed_10m,wind_direction_10m&hourly=temperature_2m,weather_code,wind_direction_10m,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset`
-
+    // console.log(url)
     // let params = new URLSearchParams()
     // params.append("latitude", lat)
     // params.append("longitude", lon)

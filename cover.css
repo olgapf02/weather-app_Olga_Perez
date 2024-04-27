@@ -115,11 +115,16 @@
   color: whitesmoke;
 }
 
-.boton-login, .boton-logout{
+.boton-login,
+.boton-logout {
   font-size: 20px;
 }
 
-.username-span{
+.username-span {
+  display: none;
+}
+
+.upload-photo-button{
   display: none;
 }
 
@@ -204,6 +209,11 @@ body {
 .card-ara .card-text-lloc-current {
   color: lightgray;
   font-size: 16px;
+}
+
+.card-ara .add-favorite-button.is-favorite {
+  background-color: lightgray;
+  opacity: 50%;
 }
 
 .card-previsio-5dies .card-img {
@@ -413,6 +423,6 @@ body {
 }
 
 /* MODAL */
-.modal-dialog{
+.modal-dialog {
   color: black;
 }
