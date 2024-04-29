@@ -344,33 +344,33 @@
         </main>
 
         <!-- LOGIN MODAL -->
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="loginModalLabel">Log in</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="inputUser" class="form-label">User</label>
-                                <input type="text" class="form-control" id="inputUser" name="user">
-                                <div id="inputUserHelp" class="form-text">We'll never share your username with anyone
-                                    else.</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="inputPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="inputPassword" name="password">
-                            </div>
-                            <button type="button" class="button-login btn btn-primary" name="login">Entra</button>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
+            <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="loginModalLabel">Log in</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="inputUser" class="form-label">User</label>
+                                    <input type="text" class="form-control" id="inputUser" name="user">
+                                    <div id="inputUserHelp" class="form-text">We'll never share your username with anyone
+                                        else.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="inputPassword" name="password">
+                                </div>
+                                <button type="button" class="button-login btn btn-primary" name="login">Entra</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
         <!-- UPLOAD PHOTO MODAL -->
         <div class="modal fade" id="uploadPhotoModal" tabindex="-1" aria-labelledby="uploadPhotoLabel"
@@ -421,9 +421,7 @@
                         </h6>
                         <h6 class="card-title my-4">Longitude:
                             <span id="offcanvas-lon"></span>
-                        </h6>
-
-                        
+                        </h6> 
                     </div>
                 </div>
                 <!-- Carousel -->

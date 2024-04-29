@@ -1,3 +1,6 @@
+import { fetchMeteo } from "./meteoApi.js";
+import { updateDashboard } from "./dashboards.js"
+
 function getFavorites() {
     console.log("Getting favorites...")
 
@@ -59,10 +62,28 @@ function refreshFavorites(favorites) {
         newAnchor.setAttribute('lon', favorite.lon)
         newAnchor.setAttribute('lat', favorite.lat)
         newAnchor.style.cursor = 'pointer'
+        newAnchor.addEventListener('click', fetchFavorite)
         let newItem = document.createElement('li')
         newItem.append(newAnchor)
         favoritesList.append(newItem)
     })
+}
+
+function fetchFavorite(event) {
+    console.log(event.target)
+    let location = {
+        "name": "",
+        "lat": event.target.getAttribute('lat'),
+        "lon": event.target.getAttribute('lon')
+    }
+    fetchMeteo(location)
+        .then(response => response.json())
+        .then(((data) => {
+            // console.log(data)
+            updateDashboard(data, location)
+        }))
+        .catch((error) => console.log(error)
+        )
 }
 
 function requestUploadPhoto() {
@@ -98,13 +119,13 @@ function requestUploadPhoto() {
 }
 
 function refreshPhotos(location) {
-    
-    document.querySelectorAll('.carousel-item').forEach((element)=>{
+
+    document.querySelectorAll('.carousel-item').forEach((element) => {
         element.remove()
     })
 
     console.log(`Downloading photos from ...${location.name}`)
-    
+
     const formData = new FormData();
     formData.append('downloadPhotos', true);
     formData.append('location', location.name);
@@ -119,12 +140,12 @@ function refreshPhotos(location) {
             return response.json()
         })
         .then((data) => {
-            // console.log(data)
-        
+            console.log(data)
+
             data.forEach((url) => {
                 let photo = document.createElement('img')
                 photo.src = url["url"]
-                photo.classList.add('d-block','w-100','border','border-3','border-danger-subtle','rounded-4')
+                photo.classList.add('d-block', 'w-100', 'border', 'border-3', 'border-danger-subtle', 'rounded-4')
                 let carouselItem = document.createElement('div')
                 carouselItem.classList.add('carousel-item')
                 carouselItem.append(photo)

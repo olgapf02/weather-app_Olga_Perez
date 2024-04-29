@@ -34,7 +34,7 @@ function showOffcanvas(event){
     document.querySelector('#offcanvas-location').innerHTML = targetLocation.name
     document.querySelector('#offcanvas-lat').innerHTML = targetLocation.lat
     document.querySelector('#offcanvas-lon').innerHTML = targetLocation.lon
-    offCanvas.toggle()
+    offCanvas.show()
 
 }
 
@@ -87,7 +87,6 @@ function getCurrentLocation() {
         refreshDashboard(targetLocation)
     })
 }
-
 
 function refreshSuggestions(e) {
     console.log(e.target.value)
