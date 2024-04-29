@@ -89,7 +89,9 @@ function requestUploadPhoto() {
         })
         .then((data) => {
             console.log("Photo uploaded successfully")
-            $('#uploadPhotoModal').modal('hide')
+            // $('#uploadPhotoModal').modal('hide')                                         // via jquery
+            let modal = new bootstrap.Modal(document.querySelector('#uploadPhotoModal'))    // via instance
+            modal.hide()
 
         })
         .catch((error) => { console.log(error) })
@@ -100,7 +102,7 @@ function refreshPhotos(location) {
     document.querySelectorAll('.carousel-item').forEach((element)=>{
         element.remove()
     })
-    
+
     console.log(`Downloading photos from ...${location.name}`)
     
     const formData = new FormData();
@@ -122,8 +124,7 @@ function refreshPhotos(location) {
             data.forEach((url) => {
                 let photo = document.createElement('img')
                 photo.src = url["url"]
-                photo.classList.add("d-block")
-                photo.classList.add("w-100")
+                photo.classList.add('d-block','w-100','border','border-3','border-danger-subtle','rounded-4')
                 let carouselItem = document.createElement('div')
                 carouselItem.classList.add('carousel-item')
                 carouselItem.append(photo)

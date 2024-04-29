@@ -24,6 +24,7 @@ function checkLogin() {
                 document.querySelector(".user-menu button").disabled = false
                 document.querySelector(".user-menu button").innerHTML = data
                 document.querySelector('.upload-photo-button').style.display = "block"
+                document.querySelector('.show-photo-button').style.display = "block"
                 return true
             }
             else {
@@ -32,6 +33,7 @@ function checkLogin() {
                 document.querySelector(".user-menu button").disabled = true
                 document.querySelector(".user-menu button").innerHTML = ""
                 document.querySelector('.upload-photo-button').style.display = "none"
+                document.querySelector('.show-photo-button').style.display = "none"
                 return false
             }
         })

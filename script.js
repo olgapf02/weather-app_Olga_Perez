@@ -16,7 +16,7 @@ window.onload = () => {
     document.querySelector('.add-favorite-button').addEventListener('click', addFavoriteButton)
     document.querySelector('#uploadPhotoModal').addEventListener('show.bs.modal',uploadPhotoModalShow)
     document.querySelector('.button-upload-photo').addEventListener('click', requestUploadPhoto)
-    document.querySelector('body').addEventListener('contextmenu', showOffcanvas)
+    document.querySelector('.show-photo-button').addEventListener('click', showOffcanvas)
 
     //Load default data
     let result = setUserDashboard()
@@ -31,6 +31,9 @@ function showOffcanvas(event){
     refreshPhotos(targetLocation)
 
     let offCanvas = new bootstrap.Offcanvas(document.querySelector('#offcanvasExample'))
+    document.querySelector('#offcanvas-location').innerHTML = targetLocation.name
+    document.querySelector('#offcanvas-lat').innerHTML = targetLocation.lat
+    document.querySelector('#offcanvas-lon').innerHTML = targetLocation.lon
     offCanvas.toggle()
 
 }

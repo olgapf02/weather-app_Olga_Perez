@@ -124,7 +124,11 @@
   display: none;
 }
 
-.upload-photo-button{
+.upload-photo-button {
+  display: none;
+}
+
+.show-photo-button {
   display: none;
 }
 
@@ -425,4 +429,13 @@ body {
 /* MODAL */
 .modal-dialog {
   color: black;
+}
+
+/* CARROUSEL */
+/* #carouselExample{
+  height: 90vh;
+} */
+
+.offcanvas-close{
+  background-color: white !important;
 }

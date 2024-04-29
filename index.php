@@ -46,6 +46,9 @@
                     data-bs-target="#uploadPhotoModal">
                     <i class="bi bi-camera"></i>
                 </button>
+                <button class="show-photo-button btn btn-outline-secondary mx-2" type="button">
+                    <i class="bi bi-eye"></i>
+                </button>
 
                 <div class="dropdown user-menu">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -401,15 +404,31 @@
         </div>
 
         <!-- OFFCANVAS  PHOTO DISPLAY-->
-        <div class="offcanvas offcanvas-bottom bg-dark h-75" tabindex="-1" id="offcanvasExample"
+        <div class="offcanvas offcanvas-bottom bg-dark h-100" tabindex="-1" id="offcanvasExample"
             aria-labelledby="offcanvasExampleLabel" data-bs-backdrop="false">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
-                <div id="carouselExample" class="carousel slide w-50 m-auto">
-                    <div class="carousel-inner">
+            <div class="offcanvas-body d-flex flex-row align-items-center justify-content-evenly">
+                <!-- Location card -->
+                <div class="card bg-dark-subtle" style="width: 18rem;">
+                    <div class="card-body">
+                        <h6 class="card-title text-secondary-emphasis">Location:</h6>
+                        <span class="mb-5" id="offcanvas-location">wwww</span>
+                        <h6 class="card-title my-4">Latitude:
+                            <span id="offcanvas-lat"></span>
+                        </h6>
+                        <h6 class="card-title my-4">Longitude:
+                            <span id="offcanvas-lon"></span>
+                        </h6>
+
+                        
+                    </div>
+                </div>
+                <!-- Carousel -->
+                <div id="carouselExample" class="carousel slide w-50">
+                    <div class="carousel-inner d-flex flex-row align-items-center">
                         <!-- <div class="carousel-item active">
                             <img src="..." class="d-block w-100" alt="...">
                         </div> -->
