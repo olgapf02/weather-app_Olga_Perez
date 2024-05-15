@@ -439,3 +439,14 @@ body {
 .offcanvas-close{
   background-color: white !important;
 }
+
+
+/* Estilo para el contenedor del mapa */
+#map {
+  height: 500px;
+}
+
+
+
+
+

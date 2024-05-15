@@ -10,10 +10,17 @@
     <meta name="generator" content="Hugo 0.122.0">
     <title>Meteodaw</title>
 
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+
+
+
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" \
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" \ crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Favicons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -21,6 +28,7 @@
 
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
+    
 </head>
 
 <body class="text-bg-dark bg-dark">
@@ -251,12 +259,21 @@
                     <!-- PREVISIÓ HORÀRIA -->
                     <div
                         class="card-previsio-horaria container-fluid d-flex flex-row gap-1 flex-wrap justify-content-between w-100">
+
+                    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
                         <!-- Controls cards/gràfica -->
-                        <i class="icon-grafica bi bi-graph-up"></i>
+                        <i class="icon-grafica bi bi-graph-up" id="mostrarGrafica"></i>
                         <div class="control-grafica form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                             <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Gràfica</label> -->
                         </div>
+                        
+                        <div id="graficoContainer" style="display: none;">
+                            <!-- Aquí se renderizará el gráfico -->
+                            <canvas id="graficoTiempo"></canvas>
+                        </div>
+                    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
+
                         <!-- Previsió per hores -->
                         <div class="card-previsio-per-hores card bg-dark bg-gradient">
                             <div class="card-body d-flex flex-column gap-3 align-items-center justify-content-evenly">
@@ -444,18 +461,64 @@
                 </div>
             </div>
         </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+ <!-- Mapa interactivo que te enseña el tiempo -->
+ <h1>Mapa del tiempo</h1>
+    <!-- Contenedor para el mapa -->
+    <div id="map" style="height: 500px;"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+    <script>
+        // Crear mapa utilizando Leaflet.js
+        // var map = L.map('map').setView([0, 0], 2);
 
+        // // Agregar capa de mapa base
+        // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        // }).addTo(map);
+
+        // // Manejar clics en el mapa
+        // map.on('click', function(e) {
+        //     obtenerTemperatura(e.latlng.lat, e.latlng.lng);
+        // });
+
+        // // Función para obtener la temperatura de la API
+        // function obtenerTemperatura(lat, lon) {
+        //     const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m`;
+
+        //     fetch(url)
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             const temperatura = data.current.temperature_2m;
+        //             mostrarPopup(lat, lon, temperatura);
+        //         })
+        //         .catch(error => {
+        //             console.error('Error al obtener la temperatura:', error);
+        //         });
+        // }
+
+        // // Función para mostrar un marcador con la temperatura en un popup
+        // function mostrarPopup(lat, lon, temperatura) {
+        //     var marker = L.marker([lat, lon]).addTo(map);
+        //     marker.bindPopup(`Temperatura: ${temperatura}°C`).openPopup();
+        // }
+    </script>
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
         <footer class="w-100 mt-3 text-white-50 d-flex flex-columns justify-content-around">
             <span>ETP XAVIER CFGS DAW M6-M7 2023/2024</span>
             <span>Dades ofertes per <a target="_blank" href="https://open-meteo.com/">Open-Meteo.com</a></span>
         </footer>
     </div>
+
 </body>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" \
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" \
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 <script src="./script.js" type="module"></script>
+<script src="./mapa_interactivo.js" type="module"></script>
+
 
 </html>

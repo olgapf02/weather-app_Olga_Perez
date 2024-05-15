@@ -3,6 +3,7 @@ import { fetchMeteo } from "./scripts/meteoApi.js"
 import { updateDashboard, updateSuggestions, setUserDashboard } from "./scripts/dashboards.js"
 import { requestLogin, requestLogout, checkLogin, loggedIn } from "./scripts/login.js"
 import { addFavorite, requestUploadPhoto, refreshPhotos } from "./scripts/favorites.js"
+import "./scripts/mapa_interactivo.js";
 
 let targetLocation = null
 
