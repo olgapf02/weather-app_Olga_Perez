@@ -465,44 +465,11 @@
  <!-- Mapa interactivo que te enseña el tiempo -->
  <h1>Mapa del tiempo</h1>
     <!-- Contenedor para el mapa -->
-    <div id="map" style="height: 500px;"></div>
+    <button class="btn btn-primary" type="submit" id="map">Button</button>
+    <div id="mapimg" style="height: 500px;"></div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     
-    <script>
-        // Crear mapa utilizando Leaflet.js
-        // var map = L.map('map').setView([0, 0], 2);
 
-        // // Agregar capa de mapa base
-        // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        // }).addTo(map);
-
-        // // Manejar clics en el mapa
-        // map.on('click', function(e) {
-        //     obtenerTemperatura(e.latlng.lat, e.latlng.lng);
-        // });
-
-        // // Función para obtener la temperatura de la API
-        // function obtenerTemperatura(lat, lon) {
-        //     const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m`;
-
-        //     fetch(url)
-        //         .then(response => response.json())
-        //         .then(data => {
-        //             const temperatura = data.current.temperature_2m;
-        //             mostrarPopup(lat, lon, temperatura);
-        //         })
-        //         .catch(error => {
-        //             console.error('Error al obtener la temperatura:', error);
-        //         });
-        // }
-
-        // // Función para mostrar un marcador con la temperatura en un popup
-        // function mostrarPopup(lat, lon, temperatura) {
-        //     var marker = L.marker([lat, lon]).addTo(map);
-        //     marker.bindPopup(`Temperatura: ${temperatura}°C`).openPopup();
-        // }
-    </script>
 <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
         <footer class="w-100 mt-3 text-white-50 d-flex flex-columns justify-content-around">
             <span>ETP XAVIER CFGS DAW M6-M7 2023/2024</span>
@@ -517,8 +484,8 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" \
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
-<script src="./script.js" type="module"></script>
-<script src="./mapa_interactivo.js" type="module"></script>
+<script src="./script.js?3" type="module"></script>
+<!-- <script src="./mapa_interactivo.js" type="module"></script> -->
 
 
 </html>

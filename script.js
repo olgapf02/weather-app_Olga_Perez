@@ -3,7 +3,8 @@ import { fetchMeteo } from "./scripts/meteoApi.js"
 import { updateDashboard, updateSuggestions, setUserDashboard } from "./scripts/dashboards.js"
 import { requestLogin, requestLogout, checkLogin, loggedIn } from "./scripts/login.js"
 import { addFavorite, requestUploadPhoto, refreshPhotos } from "./scripts/favorites.js"
-import "./scripts/mapa_interactivo.js";
+
+import { cargarMapa } from "./scripts/mapa_interactivo.js";
 
 let targetLocation = null
 
@@ -18,6 +19,9 @@ window.onload = () => {
     document.querySelector('#uploadPhotoModal').addEventListener('show.bs.modal',uploadPhotoModalShow)
     document.querySelector('.button-upload-photo').addEventListener('click', requestUploadPhoto)
     document.querySelector('.show-photo-button').addEventListener('click', showOffcanvas)
+
+    document.getElementById('map').addEventListener('click', cargarMapa)
+   
 
     //Load default data
     let result = setUserDashboard()
