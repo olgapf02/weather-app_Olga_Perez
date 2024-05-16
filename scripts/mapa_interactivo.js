@@ -1,9 +1,9 @@
-    // Variable para almacenar el marcador actual
+    // Variable para almacenar el lugar clicado 
     var marker;
     
 function cargarMapa() {
 
-    // Crear un mapa utilizando Leaflet.js y establecer la vista inicial
+    // Crearemos un mapa utilizando Leaflet.js 
     var map = L.map('map').setView([0, 0], 2);
 
     // Agregar una capa de mapa base proporcionada por OpenStreetMap
@@ -11,13 +11,13 @@ function cargarMapa() {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Agregar un evento de clic al mapa
+    // Agregar un evento click al mapa
     map.on('click', function (e) {
-        // Obtener las coordenadas del lugar donde se hizo clic
+        // Obtenemos las coordenadas del sitio clicado
         var lat = e.latlng.lat;
         var lon = e.latlng.lng;
 
-        // Llamar a la función para obtener el nombre del lugar
+        // Llamar a la función para obtener el nombre del sitio
         obtenerNombreLugar(lat, lon);
 
         // Eliminar el marcador anterior (si existe)
@@ -25,25 +25,25 @@ function cargarMapa() {
             map.removeLayer(marker);
         }
 
-        // Agregar un nuevo marcador en la ubicación del clic
+        // Agregar un nuevo glovo(marcador) en la ubicación del clic
         marker = L.marker([lat, lon]).addTo(map);
     }); 
 }
 
-        // Función para obtener el nombre del lugar basado en las coordenadas de latitud y longitud
+        // Función para obtener el nombre del sitio basado en coordenadas de latitud y longitud
         function obtenerNombreLugar(lat, lon) {
-            // URL para la geocodificación inversa utilizando el servicio de OpenStreetMap
+            // URL para la geocodificación  utilizando el servicio de OpenStreetMap
             const url = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`;
 
-            // Realizar una solicitud GET a la URL
+            // Realizaremos una solicitud GET a la URL
             fetch(url)
                 // Convertir la respuesta a formato JSON
                 .then(response => response.json())
                 // Procesar los datos de respuesta
                 .then(data => {
-                    // Extraer el nombre del lugar de los datos de respuesta
+                    // Extraer el nombre del sitio 
                     const nombreLugar = data.display_name;
-                    // Llamar a la función para obtener la temperatura con el nombre del lugar y las coordenadas
+                    // Llamar a la función para obtener la temperatura con el nombre del sitio y las coordenadas
                     obtenerTemperatura(lat, lon, nombreLugar);
                 })
                 // Capturar y manejar errores
@@ -52,12 +52,12 @@ function cargarMapa() {
                 });
         }
 
-        // Función para obtener la temperatura del lugar utilizando las coordenadas y el nombre del lugar
+        // Función para obtener la temperatura del sitio utilizando las coordenadas y el nombre del sitio
         function obtenerTemperatura(lat, lon, nombreLugar) {
             // URL para obtener los datos climáticos utilizando la API de Open Meteo
             const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m`;
 
-            // Realizar una solicitud GET a la URL
+            // Realizaremos una solicitud GET a la URL
             fetch(url)
                 // Convertir la respuesta a formato JSON
                 .then(response => response.json())

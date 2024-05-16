@@ -464,9 +464,10 @@
 <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
  <!-- Mapa interactivo que te enseña el tiempo -->
  <h1>Mapa del tiempo</h1>
-    <!-- Contenedor para el mapa -->
+    <!-- boton para que cuando se clique se muestre el iframe -->
     <button class="btn btn-primary" type="submit" id="map">MAPAMUNDI CON TEMPERATURA</button>
     <div id="mapimg" style="height: 700px;"></div>
+    <!-- Importamos esta biblioteca dejs para poder tener un iframe -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     
 
@@ -485,7 +486,6 @@
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 <script src="./script.js?3" type="module"></script>
-<!-- <script src="./mapa_interactivo.js" type="module"></script> -->
 
 
 </html>

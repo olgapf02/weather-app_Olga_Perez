@@ -6,10 +6,7 @@ general
 front
 --
     1.-mapa_interactivo
-backend
---
-    1.-
-    2.-
+
 
 
 FRONTEND (mapa clicable con temperatura y lugar exacto)
@@ -46,5 +43,3 @@ y el lugar donde clicas, en el mapa a partir de la id del div del index.php.
 5.- Una vez tenemos nuestro js en el index.php lo que haremos sera un contenedor para enseñar el mapamundi y importar la biblioteca de js (Leaflet.js).
 
 
-BACKEND()
---------------------------------------------------------------------------------------------
