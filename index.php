@@ -465,8 +465,8 @@
  <!-- Mapa interactivo que te enseña el tiempo -->
  <h1>Mapa del tiempo</h1>
     <!-- Contenedor para el mapa -->
-    <button class="btn btn-primary" type="submit" id="map">Button</button>
-    <div id="mapimg" style="height: 500px;"></div>
+    <button class="btn btn-primary" type="submit" id="map">MAPAMUNDI CON TEMPERATURA</button>
+    <div id="mapimg" style="height: 700px;"></div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     
 
