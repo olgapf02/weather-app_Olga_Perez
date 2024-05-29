@@ -11,8 +11,6 @@ front
 
 FRONTEND (mapa clicable con temperatura y lugar exacto)
 ---------------------------------------------------------
-<img>
-
 En este aspecto el cambio esta en poner un mapamundi que te da la temperatura y el lugar exacto donde cliques del mapa.
 PASOS:
 1.- crearemos un div con un id map y un  ancho para poder enseñar el mapa 
