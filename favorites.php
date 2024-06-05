@@ -16,6 +16,10 @@ if (isset($_POST['downloadPhotos'])) {
     getPhotos();
 }
 
+if (isset($_POST['deletePhoto'])) {
+    deletePhoto();
+}
+
 function getPhotos(){
     try {
         session_start();
@@ -28,14 +32,14 @@ function getPhotos(){
         $dbname = "weatherapp";
 
         $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
-        $sql = "SELECT url FROM photo WHERE location= '" . $location . "';";
+        $sql = "SELECT photo.id, url, name FROM photo INNER JOIN user ON photo.user = user.id WHERE location= '" . $location . "';";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             $imageUrls = $result->fetch_all(MYSQLI_ASSOC);
             echo json_encode($imageUrls);
         } else {
-            echo json_encode("");
+            echo json_encode([]);
         }
     } catch (Exception $e) {
         $errores = "Hay que revisar esos puntos : <br> " . $e->getMessage();
@@ -114,6 +118,40 @@ function getFavorite()
         $conn->close();
     }
 }
+
+// ////////////////////////////////////////////////////////////////////////
+function deletePhoto()
+{
+    try {
+        session_start();
+        $user = $_SESSION['user'];
+        $photoId = $_POST['photo'];
+
+        $dbservername = "localhost";
+        $dbusername = "root";
+        $dbpassword = "gaol1920";
+        $dbname = "weatherapp";
+
+        $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
+
+        // Borramos la foto física
+        $sql = "SELECT url FROM photo WHERE id = " . $photoId;
+        $result = $conn->query($sql);
+        $response = $result->fetch_row();
+        unlink($response[0]);
+
+        // Borramos la foto de base de datos
+        $sql = "DELETE FROM photo WHERE id = " . $photoId;
+        $result = $conn->query($sql);
+
+        echo json_encode(['message' => "Photo deleted successfully"]);
+    } catch (Exception $e) {
+        $errores = "Hay que revisar esos puntos : <br> " . $e->getMessage();
+    } finally {
+        $conn->close();
+    }
+}
+// ////////////////////////////////////////////////////////////////////////
 
 function addFavorite()
 {

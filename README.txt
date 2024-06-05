@@ -40,4 +40,15 @@ y el lugar donde clicas, en el mapa a partir de la id del div del index.php.
 
 5.- Una vez tenemos nuestro js en el index.php lo que haremos sera un contenedor para enseñar el mapamundi y importar la biblioteca de js (Leaflet.js).
 
+BACKEND 
+---------------------------------------------------------
 
+Nuevos features
+---------------
+* Nombre del usuario debajo de cada foto
+  - Backend: Inner join con la tabla "user" para añadir el nombre
+  - Frontend: Añadido un nuevo elemento "div" al item de la foto
+
+* Usuario puede borrar una foto (solo sus propias fotos)
+ - Backend: Nueva funcionalidad para borrar fotos (base de datos y fichero)
+ - Frontend: Boton que dispara la funcionalidad para borrar la foto

@@ -1,6 +1,8 @@
 import { fetchMeteo } from "./meteoApi.js";
 import { updateDashboard } from "./dashboards.js"
 
+let currentLocation;
+
 function getFavorites() {
     console.log("Getting favorites...")
 
@@ -117,9 +119,35 @@ function requestUploadPhoto() {
         })
         .catch((error) => { console.log(error) })
 }
+// ////////////////////////////////////////////////////////////////////////
+function deletePhoto(event) {
+    let photoId = event.target.getAttribute('data-id-photo')
+    console.log('Delete photo ' + photoId);
 
+    const formData = new FormData();
+    formData.append('deletePhoto', true);
+    formData.append('photo', photoId);
+   
+    const options = {
+        method: 'POST',
+        body: formData
+    };
+
+    fetch("./favorites.php", options)
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            console.log(data.message)
+
+            refreshPhotos(currentLocation)
+        })
+        .catch((error) => { console.log(error) })
+}
+// ////////////////////////////////////////////////////////////////////////
 function refreshPhotos(location) {
 
+    currentLocation = location
     document.querySelectorAll('.carousel-item').forEach((element) => {
         element.remove()
     })
@@ -149,6 +177,22 @@ function refreshPhotos(location) {
                 let carouselItem = document.createElement('div')
                 carouselItem.classList.add('carousel-item')
                 carouselItem.append(photo)
+
+                // Añado el nombre del usuario
+                let nameUser = document.createElement('div')
+                nameUser.innerHTML = "By " + url["name"]
+                nameUser.classList.add('name-user-photo')
+                carouselItem.append(nameUser)
+
+                // Añado boton para borrar foto
+                let botonBorrar = document.createElement('div')
+                botonBorrar.innerHTML = "Borrar"
+                botonBorrar.setAttribute('data-id-photo', url['id']);
+                botonBorrar.classList.add('button-delete-photo')
+                // Registramos el evento para borrar fotos
+                botonBorrar.addEventListener('click', deletePhoto)
+                carouselItem.append(botonBorrar)
+
                 document.querySelector('#carouselExample div.carousel-inner').append(carouselItem)
             })
             document.querySelector('.carousel-item').classList.add('active')

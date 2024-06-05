@@ -21,7 +21,7 @@ window.onload = () => {
     document.querySelector('.show-photo-button').addEventListener('click', showOffcanvas)
 // cojemos el id del boton con un evento click para que se pueda ver el mapa
     document.getElementById('map').addEventListener('click', cargarMapa)
-   
+  
 
     //Load default data
     let result = setUserDashboard()
@@ -46,6 +46,8 @@ function showOffcanvas(event){
 function uploadPhotoModalShow(){
     document.querySelector('#photoLocation').value = targetLocation.name
 }
+
+
 
 function addFavoriteButton() {
     let favorite = {

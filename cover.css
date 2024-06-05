@@ -447,6 +447,19 @@ body {
 }
 
 
+/*  ****/
+.name-user-photo {
+  color: white;
+}
+
+.button-delete-photo {
+  color: red;
+  width: 20px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+/*  ****/
+
 
 
 
