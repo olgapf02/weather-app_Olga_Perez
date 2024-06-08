@@ -1,4 +1,4 @@
-ARCHIVOS A MIRAR
+ARCHIVOS A MIRAR FRONTEND
 general
 --
     script.js
@@ -7,6 +7,9 @@ front
 --
     1.-mapa_interactivo
 
+ARCHIVOS A MIRAR BACKEND
+favorites.js
+favorites.php
 
 
 FRONTEND (mapa clicable con temperatura y lugar exacto)
@@ -42,13 +45,28 @@ y el lugar donde clicas, en el mapa a partir de la id del div del index.php.
 
 BACKEND 
 ---------------------------------------------------------
-
-Nuevos features
----------------
-* Nombre del usuario debajo de cada foto
+En el Backend cambiaremos cosas del carrusell de fotografias lo primero que cambiaremos sera:
+* Poner el nombre del usuario debajo de cada foto
   - Backend: Inner join con la tabla "user" para añadir el nombre
+    Entraremos en el archivo de favorites.js, en la function refreshPhotos, despues de crear el carrusell, creamos un elemento div con una variable llamada nameUser
+    a este div se le añade un texto by recojiendo el nombre del usuario a partir de la  bd en la tabla photo cogiendo la fila user
   - Frontend: Añadido un nuevo elemento "div" al item de la foto
 
+
+
 * Usuario puede borrar una foto (solo sus propias fotos)
- - Backend: Nueva funcionalidad para borrar fotos (base de datos y fichero)
+ - Backend: Nueva funcionalidad para borrar fotos (base de datos y fichero) 
+En el archivo favorites.js ,en la misma funcion anterior se crea otro div con la variable llamada botonBorrar
+a este div se le añade un texto de borrar
+despues se le asigna el atributo id para poder encontrar la foto y a parte se le añade una clase para poder poner este texto en color rojo y tambien se registra un evento click 
+que cuando este boton se clique se ejecute  la funcion de deletephoto.
+
+
+Una vez tenemos el boton creado con sus clases y de mas nos iremos al archivo favorites.php y crearemos una funcio que haga la accion de eliminar las fotos ya sea de l apguina y de la parte local 
+Lo que haremos despues de conectarnos a la bd del weatherapi, haremos una consulta a la url de la tabla photo mediante la variable  photoId
+se ejcuta la consulta recojiendo la url de la url de la foto 
+y se elimina el archivo del servidor utilizando unlink.
+
+Despues tambien borraremos la foto de la base de datos haciendo otra conslta a la tabla photo mediende la variabe donde se recoje el id de la foto
+
  - Frontend: Boton que dispara la funcionalidad para borrar la foto

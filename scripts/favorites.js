@@ -177,10 +177,10 @@ function refreshPhotos(location) {
                 let carouselItem = document.createElement('div')
                 carouselItem.classList.add('carousel-item')
                 carouselItem.append(photo)
-
+// ////////////////////////////////////////////////////////////////////////
                 // Añado el nombre del usuario
                 let nameUser = document.createElement('div')
-                nameUser.innerHTML = "By " + url["name"]
+                nameUser.innerHTML = "By " + url["name"].
                 nameUser.classList.add('name-user-photo')
                 carouselItem.append(nameUser)
 
@@ -189,6 +189,7 @@ function refreshPhotos(location) {
                 botonBorrar.innerHTML = "Borrar"
                 botonBorrar.setAttribute('data-id-photo', url['id']);
                 botonBorrar.classList.add('button-delete-photo')
+
                 // Registramos el evento para borrar fotos
                 botonBorrar.addEventListener('click', deletePhoto)
                 carouselItem.append(botonBorrar)
@@ -200,5 +201,5 @@ function refreshPhotos(location) {
         })
         .catch((error) => { console.log(error) })
 }
-
+// ////////////////////////////////////////////////////////////////////////
 export { getFavorites, addFavorite, requestUploadPhoto, refreshPhotos }
